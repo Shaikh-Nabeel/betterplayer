@@ -148,6 +148,7 @@ internal class BetterPlayer(
                 Log.e(TAG, "Protected content not supported on API levels below 18")
                 drmSessionManager = null
             } else {
+                Log.e(TAG, "Protected content not supported on API levels below 18")
                 val drmSchemeUuid = Util.getDrmUuid("widevine")
                 if (drmSchemeUuid != null) {
                     drmSessionManager = DefaultDrmSessionManager.Builder()
@@ -172,6 +173,7 @@ internal class BetterPlayer(
                 Log.e(TAG, "Protected content not supported on API levels below 18")
                 null
             } else {
+                Log.e(TAG, "Protected content not supported on API levels below 18")
                 DefaultDrmSessionManager.Builder()
                     .setUuidAndExoMediaDrmProvider(
                         C.CLEARKEY_UUID,
