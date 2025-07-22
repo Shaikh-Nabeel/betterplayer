@@ -748,13 +748,6 @@ internal class BetterPlayer(
         surface?.release()
 
         exoPlayer?.release()
-        if(exoPlayer != null){
-            Log.e("propkee ", "eXOplayer not null");
-            exoPlayer = null;
-            Log.e("propkee ", "after eXOplayer null");
-        }else {
-            Log.e("propkee ", "eXOplayer null");
-        }
 
     }
 
