@@ -62,7 +62,6 @@ import com.google.android.exoplayer2.trackselection.TrackSelectionOverrides
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSource
 import com.google.android.exoplayer2.util.Util
-import jdk.internal.net.http.common.Log
 import java.io.File
 import java.lang.Exception
 import java.lang.IllegalStateException
@@ -746,9 +745,7 @@ internal class BetterPlayer(
         textureEntry.release()
         eventChannel.setStreamHandler(null)
         surface?.release()
-
         exoPlayer?.release()
-
     }
 
     override fun equals(other: Any?): Boolean {
