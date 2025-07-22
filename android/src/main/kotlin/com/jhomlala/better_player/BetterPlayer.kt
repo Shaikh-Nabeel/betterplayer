@@ -62,6 +62,7 @@ import com.google.android.exoplayer2.trackselection.TrackSelectionOverrides
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSource
 import com.google.android.exoplayer2.util.Util
+import jdk.internal.net.http.common.Log
 import java.io.File
 import java.lang.Exception
 import java.lang.IllegalStateException
@@ -734,6 +735,7 @@ internal class BetterPlayer(
     }
 
     fun dispose() {
+        Log.e("propkee ", "About to dispose");
         disposeMediaSession()
         disposeRemoteNotifications()
         if (isInitialized) {
@@ -742,7 +744,16 @@ internal class BetterPlayer(
         textureEntry.release()
         eventChannel.setStreamHandler(null)
         surface?.release()
+
         exoPlayer?.release()
+        if(exoPlayer != null){
+            Log.e("propkee ", "eXOplayer not null");
+            exoPlayer = null;
+            Log.e("propkee ", "after eXOplayer null");
+        }else {
+            Log.e("propkee ", "eXOplayer null");
+        }
+
     }
 
     override fun equals(other: Any?): Boolean {
